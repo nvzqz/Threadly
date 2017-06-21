@@ -24,3 +24,48 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 //
+
+import Foundation
+
+/// A type that allows for storing a value that's unique to the current thread.
+public final class ThreadLocal<Value> {
+
+    fileprivate var _key: pthread_key_t
+
+    private var _create: () -> Value
+
+    /// Returns the inner boxed value for the current thread.
+    public var inner: Box<Value> {
+        let unmanaged: Unmanaged<Box<Value>>
+        if let pointer = pthread_getspecific(_key) {
+            unmanaged = Unmanaged.fromOpaque(pointer)
+        } else {
+            unmanaged = Unmanaged.passRetained(Box(_create()))
+            pthread_setspecific(_key, unmanaged.toOpaque())
+        }
+        return unmanaged.takeRetainedValue()
+    }
+
+    /// Creates an instance that will use `value` for an initial value.
+    public convenience init(value: @escaping @autoclosure () -> Value) {
+        self.init(create: value)
+    }
+
+    /// Creates an instance that will use `create` to generate an initial value.
+    public init(create: @escaping () -> Value) {
+        _create = create
+        _key = pthread_key_t()
+        pthread_key_create(&_key) {
+            // Cast required because argument is optional on some platforms (Linux) but not on others (macOS).
+            guard let rawPointer = ($0 as UnsafeMutableRawPointer?) else {
+                return
+            }
+            Unmanaged<AnyObject>.fromOpaque(rawPointer).release()
+        }
+    }
+
+    deinit {
+        pthread_key_delete(_key)
+    }
+
+}
