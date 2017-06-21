@@ -28,11 +28,16 @@
 import Foundation
 
 /// A type that allows for storing a value that's unique to the current thread.
-public final class ThreadLocal<Value> {
+public final class ThreadLocal<Value>: Hashable {
 
     fileprivate var _key: pthread_key_t
 
     private var _create: () -> Value
+
+    /// The hash value.
+    public var hashValue: Int {
+        return _key.hashValue
+    }
 
     /// Returns the inner boxed value for the current thread.
     public var inner: Box<Value> {
@@ -68,4 +73,9 @@ public final class ThreadLocal<Value> {
         pthread_key_delete(_key)
     }
 
+}
+
+/// Returns a Boolean value that indicates whether the two arguments have equal values.
+public func ==<T>(lhs: ThreadLocal<T>, rhs: ThreadLocal<T>) -> Bool {
+    return lhs._key == rhs._key
 }
