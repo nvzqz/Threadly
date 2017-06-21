@@ -51,6 +51,16 @@ public final class ThreadLocal<Value>: Hashable {
         return unmanaged.takeRetainedValue()
     }
 
+    /// Creates an instance that will use `value` captured in its current state for an initial value.
+    ///
+    /// Sometimes this is what you want such as in cases where `value` is the result of an expensive operation or a
+    /// copy-on-write type like `Array` or `Dictionary`.
+    public convenience init(capturing value: Value) {
+        self.init { [value] in
+            value
+        }
+    }
+
     /// Creates an instance that will use `value` for an initial value.
     public convenience init(value: @escaping @autoclosure () -> Value) {
         self.init(create: value)
