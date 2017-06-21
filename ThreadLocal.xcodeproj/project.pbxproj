@@ -11,6 +11,10 @@
 		522AA4F91EFB1C99003CFC76 /* ThreadLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522AA4F71EFB1C99003CFC76 /* ThreadLocal.swift */; };
 		522AA4FA1EFB1C99003CFC76 /* ThreadLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522AA4F71EFB1C99003CFC76 /* ThreadLocal.swift */; };
 		522AA4FB1EFB1C99003CFC76 /* ThreadLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522AA4F71EFB1C99003CFC76 /* ThreadLocal.swift */; };
+		522AA5001EFB1D50003CFC76 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522AA4FF1EFB1D50003CFC76 /* Box.swift */; };
+		522AA5011EFB1D50003CFC76 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522AA4FF1EFB1D50003CFC76 /* Box.swift */; };
+		522AA5021EFB1D50003CFC76 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522AA4FF1EFB1D50003CFC76 /* Box.swift */; };
+		522AA5031EFB1D50003CFC76 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522AA4FF1EFB1D50003CFC76 /* Box.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,7 @@
 		522AA4F61EFB1C73003CFC76 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		522AA4F71EFB1C99003CFC76 /* ThreadLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadLocal.swift; sourceTree = "<group>"; };
 		522AA4FD1EFB1CD8003CFC76 /* ThreadLocal.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ThreadLocal.playground; sourceTree = "<group>"; };
+		522AA4FF1EFB1D50003CFC76 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				522AA4F71EFB1C99003CFC76 /* ThreadLocal.swift */,
+				522AA4FF1EFB1D50003CFC76 /* Box.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -288,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				522AA4F81EFB1C99003CFC76 /* ThreadLocal.swift in Sources */,
+				522AA5001EFB1D50003CFC76 /* Box.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				522AA4F91EFB1C99003CFC76 /* ThreadLocal.swift in Sources */,
+				522AA5011EFB1D50003CFC76 /* Box.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				522AA4FA1EFB1C99003CFC76 /* ThreadLocal.swift in Sources */,
+				522AA5021EFB1D50003CFC76 /* Box.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				522AA4FB1EFB1C99003CFC76 /* ThreadLocal.swift in Sources */,
+				522AA5031EFB1D50003CFC76 /* Box.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
