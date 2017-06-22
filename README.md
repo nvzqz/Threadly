@@ -109,3 +109,72 @@ manager for Objective-C and Swift.
 ### Install Manually
 
 Simply add `ThreadLocal.swift` and `Box.swift` into your project.
+
+## Usage
+
+Try it out for yourself! Download the repo and open 'Threadly.playground'.
+
+### Initialization
+
+There are two ways to initialize a thread-local value. The value can be
+initialized lazily when retrieved (`init(value:)` & `init(create:)`) or at the
+call site (`init(capturing:)`).
+
+Using `init(value:)` is an `@autoclosure` shorthand for `init(create:)`. This
+means that the thread-local value is initialized once per thread.
+
+```swift
+import Foundation
+
+let array = ThreadLocal(value: [1, 2, 3])
+
+Thread.detachNewThread {
+    // Allocates an array with 3 elements for this thread
+    let arr = array.inner.value
+    doStuff(with: arr)
+}
+
+// Allocates another array of 3 elements for the main thread
+doStuff(with: array.inner.value)
+```
+
+When using `init(capturing:)`, the thread-local value is initialized at the call
+site.
+
+```swift
+import Foundation
+
+// The inner value gets allocated
+let array = ThreadLocal(capturing: [1, 2, 3])
+
+Thread.detachNewThread {
+    // Retrieves a shallow copy of the initial value that can be used in this
+    // thread. If the thread-local value gets mutated, a deep copy occurs to
+    // retain value semantics.
+    let arr = array.inner.value
+    doStuff(with: arr)
+}
+
+// Same as the other thread, but now in the main thread
+doStuff(with: array.inner.value)
+```
+
+### Exclusivity
+
+Each thread has exclusive access to its own local variable.
+
+```swift
+import Foundation
+
+let num = ThreadLocal(value: 42)
+
+Thread.detachNewThread {
+    withUnsafePointer(to: &num.inner.value) { ptr in
+        print(ptr) // 0x00007fa6f86074a0
+    }
+}
+
+withUnsafePointer(to: &num.inner.value) { ptr in
+    print(ptr) // 0x00007fa6f844c920
+}
+```
