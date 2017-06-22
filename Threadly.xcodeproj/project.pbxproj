@@ -25,7 +25,7 @@
 		522AA4F41EFB1BCA003CFC76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		522AA4F61EFB1C73003CFC76 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		522AA4F71EFB1C99003CFC76 /* ThreadLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadLocal.swift; sourceTree = "<group>"; };
-		522AA4FD1EFB1CD8003CFC76 /* Threadly.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Threadly.playground; sourceTree = "<group>"; };
+		522AA4FD1EFB1CD8003CFC76 /* Threadly.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Threadly.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		522AA4FF1EFB1D50003CFC76 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		52F65F9D1EFB2E580008140D /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
