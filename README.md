@@ -1,5 +1,14 @@
 [![Threadly](https://github.com/nvzqz/Threadly/raw/assets/banner.png)](https://github.com/nvzqz/Threadly)
 
+<p align="center">
+<img src="https://img.shields.io/badge/platform-ios%20%7C%20macos%20%7C%20watchos%20%7C%20tvos%20%7C%20linux-lightgrey.svg" alt="Platform">
+<img src="https://img.shields.io/badge/language-swift-orange.svg" alt="Language: Swift">
+<a href="https://cocoapods.org/pods/Threadly"><img src="https://img.shields.io/cocoapods/v/Threadly.svg" alt="CocoaPods - Threadly"></a>
+<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage"></a>
+<a href="https://codebeat.co/projects/github-com-nvzqz-threadly-master"><img src="https://codebeat.co/badges/5959731f-3832-4dbd-8c68-755a6071622b" alt="codebeat badge"></a>
+<img src="https://img.shields.io/badge/license-MIT-000000.svg" alt="License">
+</p>
+
 Threadly is a Swift µframework that allows for type-safe thread-local storage.
 
 ## What is Thread-Local Storage?
