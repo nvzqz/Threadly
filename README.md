@@ -28,7 +28,7 @@ decentralized dependency manager for Swift.
         name: "MyAwesomeProject",
         dependencies: [
             .Package(url: "https://github.com/nvzqz/Threadly.git",
-                     majorVersion: 4)
+                     majorVersion: 1)
         ]
     )
     ```
