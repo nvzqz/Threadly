@@ -84,3 +84,7 @@ manager for Objective-C and Swift.
     ```swift
     import Threadly
     ```
+
+### Install Manually
+
+Simply add `ThreadLocal.swift` and `Box.swift` into your project.
