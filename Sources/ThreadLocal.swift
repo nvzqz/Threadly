@@ -1,6 +1,6 @@
 //
 //  ThreadLocal.swift
-//  ThreadLocal
+//  Threadly
 //
 //  The MIT License (MIT)
 //

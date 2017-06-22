@@ -1,6 +1,6 @@
 //
 //  Box.swift
-//  ThreadLocal
+//  Threadly
 //
 //  The MIT License (MIT)
 //

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:ThreadLocal.xcodeproj">
+      location = "self:Threadly.xcodeproj">
    </FileRef>
 </Workspace>

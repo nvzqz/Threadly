@@ -1,6 +1,6 @@
 //
 //  Package.swift
-//  ThreadLocal
+//  Threadly
 //
 //  The MIT License (MIT)
 //
@@ -28,7 +28,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "ThreadLocal"
+    name: "Threadly"
 )
 
 #if swift(>=3.1)

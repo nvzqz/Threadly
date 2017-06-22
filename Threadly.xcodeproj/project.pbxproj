@@ -18,14 +18,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		522AA4B61EFB1AFB003CFC76 /* ThreadLocal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThreadLocal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		522AA4C41EFB1B20003CFC76 /* ThreadLocal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThreadLocal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		522AA4D11EFB1B2C003CFC76 /* ThreadLocal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThreadLocal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		522AA4EB1EFB1B4E003CFC76 /* ThreadLocal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThreadLocal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		522AA4B61EFB1AFB003CFC76 /* Threadly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Threadly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		522AA4C41EFB1B20003CFC76 /* Threadly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Threadly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		522AA4D11EFB1B2C003CFC76 /* Threadly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Threadly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		522AA4EB1EFB1B4E003CFC76 /* Threadly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Threadly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		522AA4F41EFB1BCA003CFC76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		522AA4F61EFB1C73003CFC76 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		522AA4F71EFB1C99003CFC76 /* ThreadLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadLocal.swift; sourceTree = "<group>"; };
-		522AA4FD1EFB1CD8003CFC76 /* ThreadLocal.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ThreadLocal.playground; sourceTree = "<group>"; };
+		522AA4FD1EFB1CD8003CFC76 /* Threadly.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Threadly.playground; sourceTree = "<group>"; };
 		522AA4FF1EFB1D50003CFC76 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		52F65F9D1EFB2E580008140D /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,7 +68,7 @@
 				522AA4F51EFB1C08003CFC76 /* Sources */,
 				522AA4F31EFB1BCA003CFC76 /* Support */,
 				522AA4B71EFB1AFB003CFC76 /* Products */,
-				522AA4FD1EFB1CD8003CFC76 /* ThreadLocal.playground */,
+				522AA4FD1EFB1CD8003CFC76 /* Threadly.playground */,
 				52F65F9D1EFB2E580008140D /* Package.swift */,
 				522AA4F61EFB1C73003CFC76 /* LICENSE.md */,
 			);
@@ -77,10 +77,10 @@
 		522AA4B71EFB1AFB003CFC76 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				522AA4B61EFB1AFB003CFC76 /* ThreadLocal.framework */,
-				522AA4C41EFB1B20003CFC76 /* ThreadLocal.framework */,
-				522AA4D11EFB1B2C003CFC76 /* ThreadLocal.framework */,
-				522AA4EB1EFB1B4E003CFC76 /* ThreadLocal.framework */,
+				522AA4B61EFB1AFB003CFC76 /* Threadly.framework */,
+				522AA4C41EFB1B20003CFC76 /* Threadly.framework */,
+				522AA4D11EFB1B2C003CFC76 /* Threadly.framework */,
+				522AA4EB1EFB1B4E003CFC76 /* Threadly.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,9 +136,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		522AA4B51EFB1AFB003CFC76 /* ThreadLocal macOS */ = {
+		522AA4B51EFB1AFB003CFC76 /* Threadly macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 522AA4BE1EFB1AFB003CFC76 /* Build configuration list for PBXNativeTarget "ThreadLocal macOS" */;
+			buildConfigurationList = 522AA4BE1EFB1AFB003CFC76 /* Build configuration list for PBXNativeTarget "Threadly macOS" */;
 			buildPhases = (
 				522AA4B11EFB1AFB003CFC76 /* Sources */,
 				522AA4B21EFB1AFB003CFC76 /* Frameworks */,
@@ -149,14 +149,14 @@
 			);
 			dependencies = (
 			);
-			name = "ThreadLocal macOS";
+			name = "Threadly macOS";
 			productName = "ThreadLocal macOS";
-			productReference = 522AA4B61EFB1AFB003CFC76 /* ThreadLocal.framework */;
+			productReference = 522AA4B61EFB1AFB003CFC76 /* Threadly.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		522AA4C31EFB1B20003CFC76 /* ThreadLocal iOS */ = {
+		522AA4C31EFB1B20003CFC76 /* Threadly iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 522AA4C91EFB1B20003CFC76 /* Build configuration list for PBXNativeTarget "ThreadLocal iOS" */;
+			buildConfigurationList = 522AA4C91EFB1B20003CFC76 /* Build configuration list for PBXNativeTarget "Threadly iOS" */;
 			buildPhases = (
 				522AA4BF1EFB1B20003CFC76 /* Sources */,
 				522AA4C01EFB1B20003CFC76 /* Frameworks */,
@@ -167,14 +167,14 @@
 			);
 			dependencies = (
 			);
-			name = "ThreadLocal iOS";
+			name = "Threadly iOS";
 			productName = "ThreadLocal iOS";
-			productReference = 522AA4C41EFB1B20003CFC76 /* ThreadLocal.framework */;
+			productReference = 522AA4C41EFB1B20003CFC76 /* Threadly.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		522AA4D01EFB1B2C003CFC76 /* ThreadLocal watchOS */ = {
+		522AA4D01EFB1B2C003CFC76 /* Threadly watchOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 522AA4D61EFB1B2C003CFC76 /* Build configuration list for PBXNativeTarget "ThreadLocal watchOS" */;
+			buildConfigurationList = 522AA4D61EFB1B2C003CFC76 /* Build configuration list for PBXNativeTarget "Threadly watchOS" */;
 			buildPhases = (
 				522AA4CC1EFB1B2C003CFC76 /* Sources */,
 				522AA4CD1EFB1B2C003CFC76 /* Frameworks */,
@@ -185,14 +185,14 @@
 			);
 			dependencies = (
 			);
-			name = "ThreadLocal watchOS";
+			name = "Threadly watchOS";
 			productName = "ThreadLocal watchOS";
-			productReference = 522AA4D11EFB1B2C003CFC76 /* ThreadLocal.framework */;
+			productReference = 522AA4D11EFB1B2C003CFC76 /* Threadly.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		522AA4EA1EFB1B4D003CFC76 /* ThreadLocal tvOS */ = {
+		522AA4EA1EFB1B4D003CFC76 /* Threadly tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 522AA4F01EFB1B4E003CFC76 /* Build configuration list for PBXNativeTarget "ThreadLocal tvOS" */;
+			buildConfigurationList = 522AA4F01EFB1B4E003CFC76 /* Build configuration list for PBXNativeTarget "Threadly tvOS" */;
 			buildPhases = (
 				522AA4E61EFB1B4D003CFC76 /* Sources */,
 				522AA4E71EFB1B4D003CFC76 /* Frameworks */,
@@ -203,9 +203,9 @@
 			);
 			dependencies = (
 			);
-			name = "ThreadLocal tvOS";
+			name = "Threadly tvOS";
 			productName = "ThreadLocal tvOS";
-			productReference = 522AA4EB1EFB1B4E003CFC76 /* ThreadLocal.framework */;
+			productReference = 522AA4EB1EFB1B4E003CFC76 /* Threadly.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -239,7 +239,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 522AA4AE1EFB1AC6003CFC76 /* Build configuration list for PBXProject "ThreadLocal" */;
+			buildConfigurationList = 522AA4AE1EFB1AC6003CFC76 /* Build configuration list for PBXProject "Threadly" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -251,10 +251,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				522AA4B51EFB1AFB003CFC76 /* ThreadLocal macOS */,
-				522AA4C31EFB1B20003CFC76 /* ThreadLocal iOS */,
-				522AA4D01EFB1B2C003CFC76 /* ThreadLocal watchOS */,
-				522AA4EA1EFB1B4D003CFC76 /* ThreadLocal tvOS */,
+				522AA4B51EFB1AFB003CFC76 /* Threadly macOS */,
+				522AA4C31EFB1B20003CFC76 /* Threadly iOS */,
+				522AA4D01EFB1B2C003CFC76 /* Threadly watchOS */,
+				522AA4EA1EFB1B4D003CFC76 /* Threadly tvOS */,
 			);
 		};
 /* End PBXProject section */
@@ -830,7 +830,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		522AA4AE1EFB1AC6003CFC76 /* Build configuration list for PBXProject "ThreadLocal" */ = {
+		522AA4AE1EFB1AC6003CFC76 /* Build configuration list for PBXProject "Threadly" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				522AA4AF1EFB1AC6003CFC76 /* Debug */,
@@ -839,7 +839,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		522AA4BE1EFB1AFB003CFC76 /* Build configuration list for PBXNativeTarget "ThreadLocal macOS" */ = {
+		522AA4BE1EFB1AFB003CFC76 /* Build configuration list for PBXNativeTarget "Threadly macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				522AA4BC1EFB1AFB003CFC76 /* Debug */,
@@ -848,7 +848,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		522AA4C91EFB1B20003CFC76 /* Build configuration list for PBXNativeTarget "ThreadLocal iOS" */ = {
+		522AA4C91EFB1B20003CFC76 /* Build configuration list for PBXNativeTarget "Threadly iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				522AA4CA1EFB1B20003CFC76 /* Debug */,
@@ -857,7 +857,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		522AA4D61EFB1B2C003CFC76 /* Build configuration list for PBXNativeTarget "ThreadLocal watchOS" */ = {
+		522AA4D61EFB1B2C003CFC76 /* Build configuration list for PBXNativeTarget "Threadly watchOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				522AA4D71EFB1B2C003CFC76 /* Debug */,
@@ -866,7 +866,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		522AA4F01EFB1B4E003CFC76 /* Build configuration list for PBXNativeTarget "ThreadLocal tvOS" */ = {
+		522AA4F01EFB1B4E003CFC76 /* Build configuration list for PBXNativeTarget "Threadly tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				522AA4F11EFB1B4E003CFC76 /* Debug */,
