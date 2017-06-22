@@ -83,6 +83,11 @@ public final class ThreadLocal<Value>: Hashable {
         pthread_key_delete(_key)
     }
 
+    /// Returns the result of the closure performed on the value of `self`.
+    public func withValue<T>(_ body: (inout Value) throws -> T) rethrows -> T {
+        return try body(&inner.value)
+    }
+
 }
 
 /// Returns a Boolean value that indicates whether the two arguments have equal values.
