@@ -48,7 +48,7 @@ public final class ThreadLocal<Value>: Hashable {
             unmanaged = Unmanaged.passRetained(Box(_create()))
             pthread_setspecific(_key, unmanaged.toOpaque())
         }
-        return unmanaged.takeRetainedValue()
+        return unmanaged.takeUnretainedValue()
     }
 
     /// Creates an instance that will use `value` captured in its current state for an initial value.
