@@ -58,9 +58,9 @@ class ThreadlyTests: XCTestCase {
     ]
 
     func testDeallocation() {
-        let exp = XCTestExpectation(description: "deinit")
+        let expct = expectation(description: "deinit")
         let dummy = ThreadLocal<DummyData> {
-            DummyData(expectation: exp)
+            DummyData(expectation: expct)
         }
 
         #if os(macOS) || os(iOS) || os(watchOS) || os(tvOS)
@@ -74,7 +74,7 @@ class ThreadlyTests: XCTestCase {
             }
         #endif
 
-        wait(for: [exp], timeout: 1)
+        waitForExpectations(timeout: 1, handler: nil)
     }
 
 }
