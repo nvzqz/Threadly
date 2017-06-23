@@ -39,6 +39,7 @@ class DummyData {
 
 }
 
+#if os(macOS) || os(iOS) || os(watchOS) || os(tvOS)
 class DummyHandler {
 
     var block: () -> ()
@@ -48,6 +49,7 @@ class DummyHandler {
     @objc func perform() { self.block() }
 
 }
+#endif
 
 class ThreadlyTests: XCTestCase {
 
@@ -61,10 +63,16 @@ class ThreadlyTests: XCTestCase {
             DummyData(expectation: exp)
         }
 
-        let handler = DummyHandler {
-            let _ = dummy.inner.value
-        }
-        Thread.detachNewThreadSelector(#selector(DummyHandler.perform), toTarget: handler, with: nil)
+        #if os(macOS) || os(iOS) || os(watchOS) || os(tvOS)
+            let handler = DummyHandler {
+                let _ = dummy.inner.value
+            }
+            Thread.detachNewThreadSelector(#selector(DummyHandler.perform), toTarget: handler, with: nil)
+        #else
+            Thread.detachNewThread {
+                let _ = dummy.inner.value
+            }
+        #endif
 
         wait(for: [exp], timeout: 1)
     }
