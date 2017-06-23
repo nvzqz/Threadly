@@ -27,27 +27,44 @@
 
 import Foundation
 
-private func _create_key() -> pthread_key_t {
-    var key = pthread_key_t()
-    pthread_key_create(&key) {
-        // Cast required because argument is optional on some platforms (Linux) but not on others (macOS).
-        guard let rawPointer = ($0 as UnsafeMutableRawPointer?) else {
-            return
-        }
-        Unmanaged<AnyObject>.fromOpaque(rawPointer).release()
-    }
-    return key
-}
+private final class _Key<T> {
 
-private func _boxed<T>(for key: pthread_key_t, create: () throws -> T) rethrows -> Box<T> {
-    let unmanaged: Unmanaged<Box<T>>
-    if let pointer = pthread_getspecific(key) {
-        unmanaged = Unmanaged.fromOpaque(pointer)
-    } else {
-        unmanaged = Unmanaged.passRetained(Box(try create()))
-        pthread_setspecific(key, unmanaged.toOpaque())
+    var raw: pthread_key_t
+
+    var box: Box<T>? {
+        guard let pointer = pthread_getspecific(raw) else {
+            return nil
+        }
+        return Unmanaged.fromOpaque(pointer).takeUnretainedValue()
     }
-    return unmanaged.takeUnretainedValue()
+
+    init() {
+        raw = pthread_key_t()
+        pthread_key_create(&raw) {
+            // Cast required because argument is optional on some
+            // platforms (Linux) but not on others (macOS)
+            guard let rawPointer = ($0 as UnsafeMutableRawPointer?) else {
+                return
+            }
+            Unmanaged<AnyObject>.fromOpaque(rawPointer).release()
+        }
+    }
+
+    deinit {
+        pthread_key_delete(raw)
+    }
+
+    func box(create: () throws -> T) rethrows -> Box<T> {
+        let unmanaged: Unmanaged<Box<T>>
+        if let pointer = pthread_getspecific(raw) {
+            unmanaged = Unmanaged.fromOpaque(pointer)
+        } else {
+            unmanaged = Unmanaged.passRetained(Box(try create()))
+            pthread_setspecific(raw, unmanaged.toOpaque())
+        }
+        return unmanaged.takeUnretainedValue()
+    }
+
 }
 
 /// A type that takes an initializer to create and then store a value that's
@@ -55,20 +72,20 @@ private func _boxed<T>(for key: pthread_key_t, create: () throws -> T) rethrows 
 /// the thread-local is accessed, either through `inner` or `withValue(_:)`.
 ///
 /// - note: If the initial value isn't known until retrieval, use `DeferredThreadLocal`.
-public final class ThreadLocal<Value>: Hashable {
+public struct ThreadLocal<Value>: Hashable {
 
-    fileprivate var _key: pthread_key_t
+    fileprivate var _key: _Key<Value>
 
     private var _create: () -> Value
 
     /// The hash value.
     public var hashValue: Int {
-        return _key.hashValue
+        return _key.raw.hashValue
     }
 
     /// Returns the inner boxed value for the current thread.
     public var inner: Box<Value> {
-        return _boxed(for: _key, create: _create)
+        return _key.box(create: _create)
     }
 
     /// Creates an instance that will use `value` captured in its current
@@ -77,25 +94,21 @@ public final class ThreadLocal<Value>: Hashable {
     /// Sometimes this is what you want such as in cases where `value` is
     /// the result of an expensive operation or a copy-on-write type like
     /// `Array` or `Dictionary`.
-    public convenience init(capturing value: Value) {
+    public init(capturing value: Value) {
         self.init { [value] in
             value
         }
     }
 
     /// Creates an instance that will use `value` for an initial value.
-    public convenience init(value: @escaping @autoclosure () -> Value) {
+    public init(value: @escaping @autoclosure () -> Value) {
         self.init(create: value)
     }
 
     /// Creates an instance that will use `create` to generate an initial value.
     public init(create: @escaping () -> Value) {
         _create = create
-        _key = _create_key()
-    }
-
-    deinit {
-        pthread_key_delete(_key)
+        _key = _Key()
     }
 
     /// Returns the result of the closure performed on the value of `self`.
@@ -110,37 +123,30 @@ public final class ThreadLocal<Value>: Hashable {
 ///
 /// - note: If the initial value is known at the time of initialization of the
 ///         enclosing type, consider using `ThreadLocal` instead.
-public final class DeferredThreadLocal<Value>: Hashable {
+public struct DeferredThreadLocal<Value>: Hashable {
 
-    fileprivate var _key: pthread_key_t
+    fileprivate var _key: _Key<Value>
 
     /// The hash value.
     public var hashValue: Int {
-        return _key.hashValue
+        return _key.raw.hashValue
     }
 
     /// Returns the inner boxed value for the current thread if it's been
     /// created, or `nil` otherwise.
     public var inner: Box<Value>? {
-        guard let pointer = pthread_getspecific(_key) else {
-            return nil
-        }
-        return Unmanaged.fromOpaque(pointer).takeUnretainedValue()
+        return _key.box
     }
 
     /// Creates an instance.
     public init() {
-        _key = _create_key()
-    }
-
-    deinit {
-        pthread_key_delete(_key)
+        _key = _Key()
     }
 
     /// Returns the inner boxed value for the current thread,
     /// created with `create` if not previously initialized.
     public func inner(createdWith create: () throws -> Value) rethrows -> Box<Value> {
-        return try _boxed(for: _key, create: create)
+        return try _key.box(create: create)
     }
 
     /// Returns the result of the closure performed on the inner thread-local
@@ -159,10 +165,10 @@ public final class DeferredThreadLocal<Value>: Hashable {
 
 /// Returns a Boolean value that indicates whether the two arguments have equal values.
 public func ==<T>(lhs: ThreadLocal<T>, rhs: ThreadLocal<T>) -> Bool {
-    return lhs._key == rhs._key
+    return lhs._key.raw == rhs._key.raw
 }
 
 /// Returns a Boolean value that indicates whether the two arguments have equal values.
 public func ==<T>(lhs: DeferredThreadLocal<T>, rhs: DeferredThreadLocal<T>) -> Bool {
-    return lhs._key == rhs._key
+    return lhs._key.raw == rhs._key.raw
 }
