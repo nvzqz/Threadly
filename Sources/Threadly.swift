@@ -1,5 +1,5 @@
 //
-//  ThreadLocal.swift
+//  Threadly.swift
 //  Threadly
 //
 //  The MIT License (MIT)
@@ -63,6 +63,19 @@ private final class _Key<T> {
             pthread_setspecific(raw, unmanaged.toOpaque())
         }
         return unmanaged.takeUnretainedValue()
+    }
+
+}
+
+/// A reference to a heap-allocated value.
+public final class Box<Value> {
+
+    /// The boxed value.
+    public var value: Value
+
+    /// Creates an instance that boxes `value`.
+    public init(_ value: Value) {
+        self.value = value
     }
 
 }

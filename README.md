@@ -108,7 +108,7 @@ manager for Objective-C and Swift.
 
 ### Install Manually
 
-Simply add `ThreadLocal.swift` and `Box.swift` into your project.
+Simply add `Threadly.swift` into your project.
 
 ## Usage
 
