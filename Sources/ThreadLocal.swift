@@ -111,6 +111,13 @@ public struct ThreadLocal<Value>: Hashable {
         _key = _Key()
     }
 
+    /// Creates an instance that uses the same storage as `deferred` but with
+    /// `create` as an initializer.
+    public init(fromDeferred deferred: DeferredThreadLocal<Value>, create: @escaping () -> Value) {
+        _create = create
+        _key = deferred._key
+    }
+
     /// Returns the result of the closure performed on the value of `self`.
     public func withValue<T>(_ body: (inout Value) throws -> T) rethrows -> T {
         return try body(&inner.value)
