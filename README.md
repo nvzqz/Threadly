@@ -11,12 +11,11 @@
 
 Threadly is a Swift µframework that allows for type-safe thread-local storage.
 
-## What is Thread-Local Storage?
+## What is [Thread-Local Storage](https://en.wikipedia.org/wiki/Thread-local_storage)?
 
-[Thread-local storage (TLS)](https://en.wikipedia.org/wiki/Thread-local_storage)
-lets you define a single variable that each thread has its own separate copy of.
-This is great for cases such as having a mutable global variable that can't be
-safely accessed by multiple threads.
+_Thread-local storage_ (TLS) lets you define a single variable that each thread
+has its own separate copy of. This is great for cases such as having a mutable
+global variable that can't be safely accessed by multiple threads.
 
 One example of this is with random number generators. Each thread can have its
 own seeded generator that's mutated on a per-thread basis. While this may
