@@ -15,7 +15,37 @@
 		522AA5011EFB1D50003CFC76 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522AA4FF1EFB1D50003CFC76 /* Box.swift */; };
 		522AA5021EFB1D50003CFC76 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522AA4FF1EFB1D50003CFC76 /* Box.swift */; };
 		522AA5031EFB1D50003CFC76 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522AA4FF1EFB1D50003CFC76 /* Box.swift */; };
+		52AC7E881EFD6C8E00A1841B /* Threadly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 522AA4B61EFB1AFB003CFC76 /* Threadly.framework */; };
+		52AC7E971EFD6C9D00A1841B /* Threadly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 522AA4C41EFB1B20003CFC76 /* Threadly.framework */; };
+		52AC7EA61EFD6CB100A1841B /* Threadly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 522AA4EB1EFB1B4E003CFC76 /* Threadly.framework */; };
+		52AC7EAC1EFD6CD800A1841B /* ThreadlyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AC7E7C1EFD6C4700A1841B /* ThreadlyTests.swift */; };
+		52AC7EAD1EFD6CD900A1841B /* ThreadlyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AC7E7C1EFD6C4700A1841B /* ThreadlyTests.swift */; };
+		52AC7EAE1EFD6CD900A1841B /* ThreadlyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AC7E7C1EFD6C4700A1841B /* ThreadlyTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		52AC7E891EFD6C8E00A1841B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 522AA4AB1EFB1AC6003CFC76 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 522AA4B51EFB1AFB003CFC76;
+			remoteInfo = "Threadly macOS";
+		};
+		52AC7E981EFD6C9D00A1841B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 522AA4AB1EFB1AC6003CFC76 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 522AA4C31EFB1B20003CFC76;
+			remoteInfo = "Threadly iOS";
+		};
+		52AC7EA71EFD6CB100A1841B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 522AA4AB1EFB1AC6003CFC76 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 522AA4EA1EFB1B4D003CFC76;
+			remoteInfo = "Threadly tvOS";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		522AA4B61EFB1AFB003CFC76 /* Threadly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Threadly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -27,6 +57,12 @@
 		522AA4F71EFB1C99003CFC76 /* ThreadLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadLocal.swift; sourceTree = "<group>"; };
 		522AA4FD1EFB1CD8003CFC76 /* Threadly.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Threadly.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		522AA4FF1EFB1D50003CFC76 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		52AC7E781EFD6C4700A1841B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52AC7E791EFD6C4700A1841B /* LinuxMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
+		52AC7E7C1EFD6C4700A1841B /* ThreadlyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadlyTests.swift; sourceTree = "<group>"; };
+		52AC7E831EFD6C8E00A1841B /* Threadly macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Threadly macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		52AC7E921EFD6C9D00A1841B /* Threadly iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Threadly iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		52AC7EA11EFD6CB100A1841B /* Threadly tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Threadly tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52F65F9D1EFB2E580008140D /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,6 +95,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		52AC7E801EFD6C8E00A1841B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52AC7E881EFD6C8E00A1841B /* Threadly.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52AC7E8F1EFD6C9D00A1841B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52AC7E971EFD6C9D00A1841B /* Threadly.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52AC7E9E1EFD6CB100A1841B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52AC7EA61EFD6CB100A1841B /* Threadly.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -67,6 +127,7 @@
 			children = (
 				522AA4F51EFB1C08003CFC76 /* Sources */,
 				522AA4F31EFB1BCA003CFC76 /* Support */,
+				52AC7E731EFD6BEE00A1841B /* Tests */,
 				522AA4B71EFB1AFB003CFC76 /* Products */,
 				522AA4FD1EFB1CD8003CFC76 /* Threadly.playground */,
 				52F65F9D1EFB2E580008140D /* Package.swift */,
@@ -81,6 +142,9 @@
 				522AA4C41EFB1B20003CFC76 /* Threadly.framework */,
 				522AA4D11EFB1B2C003CFC76 /* Threadly.framework */,
 				522AA4EB1EFB1B4E003CFC76 /* Threadly.framework */,
+				52AC7E831EFD6C8E00A1841B /* Threadly macOS Tests.xctest */,
+				52AC7E921EFD6C9D00A1841B /* Threadly iOS Tests.xctest */,
+				52AC7EA11EFD6CB100A1841B /* Threadly tvOS Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,6 +164,24 @@
 				522AA4FF1EFB1D50003CFC76 /* Box.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		52AC7E731EFD6BEE00A1841B /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				52AC7E781EFD6C4700A1841B /* Info.plist */,
+				52AC7E791EFD6C4700A1841B /* LinuxMain.swift */,
+				52AC7E7A1EFD6C4700A1841B /* ThreadlyTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		52AC7E7A1EFD6C4700A1841B /* ThreadlyTests */ = {
+			isa = PBXGroup;
+			children = (
+				52AC7E7C1EFD6C4700A1841B /* ThreadlyTests.swift */,
+			);
+			path = ThreadlyTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,12 +290,67 @@
 			productReference = 522AA4EB1EFB1B4E003CFC76 /* Threadly.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		52AC7E821EFD6C8E00A1841B /* Threadly macOS Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52AC7E8B1EFD6C8E00A1841B /* Build configuration list for PBXNativeTarget "Threadly macOS Tests" */;
+			buildPhases = (
+				52AC7E7F1EFD6C8E00A1841B /* Sources */,
+				52AC7E801EFD6C8E00A1841B /* Frameworks */,
+				52AC7E811EFD6C8E00A1841B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52AC7E8A1EFD6C8E00A1841B /* PBXTargetDependency */,
+			);
+			name = "Threadly macOS Tests";
+			productName = "Threadly macOS Tests";
+			productReference = 52AC7E831EFD6C8E00A1841B /* Threadly macOS Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		52AC7E911EFD6C9D00A1841B /* Threadly iOS Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52AC7E9A1EFD6C9D00A1841B /* Build configuration list for PBXNativeTarget "Threadly iOS Tests" */;
+			buildPhases = (
+				52AC7E8E1EFD6C9D00A1841B /* Sources */,
+				52AC7E8F1EFD6C9D00A1841B /* Frameworks */,
+				52AC7E901EFD6C9D00A1841B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52AC7E991EFD6C9D00A1841B /* PBXTargetDependency */,
+			);
+			name = "Threadly iOS Tests";
+			productName = "Threadly iOS Tests";
+			productReference = 52AC7E921EFD6C9D00A1841B /* Threadly iOS Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		52AC7EA01EFD6CB100A1841B /* Threadly tvOS Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52AC7EA91EFD6CB100A1841B /* Build configuration list for PBXNativeTarget "Threadly tvOS Tests" */;
+			buildPhases = (
+				52AC7E9D1EFD6CB100A1841B /* Sources */,
+				52AC7E9E1EFD6CB100A1841B /* Frameworks */,
+				52AC7E9F1EFD6CB100A1841B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52AC7EA81EFD6CB100A1841B /* PBXTargetDependency */,
+			);
+			name = "Threadly tvOS Tests";
+			productName = "Threadly tvOS Tests";
+			productReference = 52AC7EA11EFD6CB100A1841B /* Threadly tvOS Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		522AA4AB1EFB1AC6003CFC76 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Nikolai Vazquez";
 				TargetAttributes = {
@@ -237,6 +374,18 @@
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
+					52AC7E821EFD6C8E00A1841B = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					52AC7E911EFD6C9D00A1841B = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					52AC7EA01EFD6CB100A1841B = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 522AA4AE1EFB1AC6003CFC76 /* Build configuration list for PBXProject "Threadly" */;
@@ -255,6 +404,9 @@
 				522AA4C31EFB1B20003CFC76 /* Threadly iOS */,
 				522AA4D01EFB1B2C003CFC76 /* Threadly watchOS */,
 				522AA4EA1EFB1B4D003CFC76 /* Threadly tvOS */,
+				52AC7E821EFD6C8E00A1841B /* Threadly macOS Tests */,
+				52AC7E911EFD6C9D00A1841B /* Threadly iOS Tests */,
+				52AC7EA01EFD6CB100A1841B /* Threadly tvOS Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -282,6 +434,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		522AA4E91EFB1B4D003CFC76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52AC7E811EFD6C8E00A1841B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52AC7E901EFD6C9D00A1841B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52AC7E9F1EFD6CB100A1841B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -327,7 +500,49 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		52AC7E7F1EFD6C8E00A1841B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52AC7EAC1EFD6CD800A1841B /* ThreadlyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52AC7E8E1EFD6C9D00A1841B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52AC7EAD1EFD6CD900A1841B /* ThreadlyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52AC7E9D1EFD6CB100A1841B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52AC7EAE1EFD6CD900A1841B /* ThreadlyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		52AC7E8A1EFD6C8E00A1841B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 522AA4B51EFB1AFB003CFC76 /* Threadly macOS */;
+			targetProxy = 52AC7E891EFD6C8E00A1841B /* PBXContainerItemProxy */;
+		};
+		52AC7E991EFD6C9D00A1841B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 522AA4C31EFB1B20003CFC76 /* Threadly iOS */;
+			targetProxy = 52AC7E981EFD6C9D00A1841B /* PBXContainerItemProxy */;
+		};
+		52AC7EA81EFD6CB100A1841B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 522AA4EA1EFB1B4D003CFC76 /* Threadly tvOS */;
+			targetProxy = 52AC7EA71EFD6CB100A1841B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		522AA4AF1EFB1AC6003CFC76 /* Debug */ = {
@@ -875,6 +1090,218 @@
 			};
 			name = Release;
 		};
+		52AC7E8C1EFD6C8E00A1841B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nikolaivazquez.Threadly-macOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		52AC7E8D1EFD6C8E00A1841B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nikolaivazquez.Threadly-macOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		52AC7E9B1EFD6C9D00A1841B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nikolaivazquez.Threadly-iOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		52AC7E9C1EFD6C9D00A1841B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nikolaivazquez.Threadly-iOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		52AC7EAA1EFD6CB100A1841B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nikolaivazquez.Threadly-tvOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		52AC7EAB1EFD6CB100A1841B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nikolaivazquez.Threadly-tvOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -922,6 +1349,30 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		52AC7E8B1EFD6C8E00A1841B /* Build configuration list for PBXNativeTarget "Threadly macOS Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52AC7E8C1EFD6C8E00A1841B /* Debug */,
+				52AC7E8D1EFD6C8E00A1841B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		52AC7E9A1EFD6C9D00A1841B /* Build configuration list for PBXNativeTarget "Threadly iOS Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52AC7E9B1EFD6C9D00A1841B /* Debug */,
+				52AC7E9C1EFD6C9D00A1841B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		52AC7EA91EFD6CB100A1841B /* Build configuration list for PBXNativeTarget "Threadly tvOS Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52AC7EAA1EFD6CB100A1841B /* Debug */,
+				52AC7EAB1EFD6CB100A1841B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
