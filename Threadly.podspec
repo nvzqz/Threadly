@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name                      = "Threadly"
-    s.version                   = "1.0.0"
+    s.version                   = "1.1.0"
     s.summary                   = "Type-safe thread-local storage in Swift."
     s.homepage                  = "https://github.com/nvzqz/#{s.name}"
     s.license                   = { :type => "MIT", :file => "LICENSE.md" }
