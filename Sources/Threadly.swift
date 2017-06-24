@@ -55,14 +55,13 @@ private final class _Key<T> {
     }
 
     func box(create: () throws -> T) rethrows -> Box<T> {
-        let unmanaged: Unmanaged<Box<T>>
-        if let pointer = pthread_getspecific(raw) {
-            unmanaged = Unmanaged.fromOpaque(pointer)
+        if let box = self.box {
+            return box
         } else {
-            unmanaged = Unmanaged.passRetained(Box(try create()))
-            pthread_setspecific(raw, unmanaged.toOpaque())
+            let box = try Box(create())
+            pthread_setspecific(raw, Unmanaged.passRetained(box).toOpaque())
+            return box
         }
-        return unmanaged.takeUnretainedValue()
     }
 
 }
