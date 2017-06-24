@@ -87,7 +87,7 @@ class ThreadlyTests: XCTestCase {
 
         withDetachedThread {
             let otherAddress = UnsafeMutablePointer(&number.inner.value)
-            if mainAddress != otherAddress {
+            if otherAddress != mainAddress {
                 expect.fulfill()
             }
         }
