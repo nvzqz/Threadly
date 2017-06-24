@@ -35,7 +35,7 @@ private final class _Key<T> {
         guard let pointer = pthread_getspecific(raw) else {
             return nil
         }
-        return Unmanaged.fromOpaque(pointer).takeUnretainedValue()
+        return Unmanaged<Box<T>>.fromOpaque(pointer).takeUnretainedValue()
     }
 
     init() {
