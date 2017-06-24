@@ -59,19 +59,16 @@ class ThreadlyTests: XCTestCase {
 
     func testDeallocation() {
         let expct = expectation(description: "deinit")
-        let dummy = ThreadLocal<DummyData> {
-            DummyData(expectation: expct)
+        let dummy = ThreadLocal<DummyData> { DummyData(expectation: expct) }
+        let block = {
+            let _ = dummy.inner.value
         }
 
         #if os(macOS) || os(iOS) || os(watchOS) || os(tvOS)
-            let handler = DummyHandler {
-                let _ = dummy.inner.value
-            }
+            let handler = DummyHandler(block: block)
             Thread.detachNewThreadSelector(#selector(DummyHandler.perform), toTarget: handler, with: nil)
         #else
-            Thread.detachNewThread {
-                let _ = dummy.inner.value
-            }
+            Thread.detachNewThread(block)
         #endif
 
         waitForExpectations(timeout: 1, handler: nil)
