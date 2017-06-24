@@ -40,7 +40,7 @@ class DummyData {
 }
 
 #if os(macOS) || os(iOS) || os(watchOS) || os(tvOS)
-class DummyHandler {
+class ThreadHandler {
 
     var block: () -> ()
 
@@ -51,6 +51,16 @@ class DummyHandler {
 }
 #endif
 
+func withDetachedThread(_ block: @escaping () -> ()) {
+    #if os(macOS) || os(iOS) || os(watchOS) || os(tvOS)
+        let handler = ThreadHandler(block: block)
+        Thread.detachNewThreadSelector(#selector(ThreadHandler.perform), toTarget: handler, with: nil)
+    #else
+        Thread.detachNewThread(block)
+    #endif
+
+}
+
 class ThreadlyTests: XCTestCase {
 
     static let allTests = [
@@ -60,16 +70,10 @@ class ThreadlyTests: XCTestCase {
     func testDeallocation() {
         let expct = expectation(description: "deinit")
         let dummy = ThreadLocal<DummyData> { DummyData(expectation: expct) }
-        let block = {
+
+        withDetachedThread {
             let _ = dummy.inner.value
         }
-
-        #if os(macOS) || os(iOS) || os(watchOS) || os(tvOS)
-            let handler = DummyHandler(block: block)
-            Thread.detachNewThreadSelector(#selector(DummyHandler.perform), toTarget: handler, with: nil)
-        #else
-            Thread.detachNewThread(block)
-        #endif
 
         waitForExpectations(timeout: 1, handler: nil)
     }
