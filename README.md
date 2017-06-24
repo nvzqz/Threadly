@@ -23,6 +23,12 @@ own seeded generator that's mutated on a per-thread basis. While this may
 potentially use more memory, it's much faster than accessing a shared global
 variable through a mutex.
 
+## Build Status
+
+| Branch    | Status |
+| :-------: | :----: |
+| `master`  | [![Build Status](https://travis-ci.org/nvzqz/Threadly.svg?branch=master)](https://travis-ci.org/nvzqz/Threadly)
+
 ## Installation
 
 ### Compatibility
