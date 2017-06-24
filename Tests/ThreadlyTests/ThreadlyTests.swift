@@ -64,23 +64,24 @@ class ThreadlyTests: XCTestCase {
     ]
 
     func testDeallocation() {
-        let expct = expectation(description: "deinit")
-        let dummy = ThreadLocal(create: { DeinitFulfiller(expectation: expct) })
-        expct.expectedFulfillmentCount = 2
+        func helper(count: Int) {
+            let expct = expectation(description: "deinit")
+            let dummy = ThreadLocal(create: { DeinitFulfiller(expectation: expct) })
+
+            withDetachedThread {
+                for _ in repeatElement((), count: count) {
+                    let _ = dummy.inner.value
+                }
+            }
+            
+            waitForExpectations(timeout: 1, handler: nil)
+        }
 
         // Test single access
-        withDetachedThread {
-            let _ = dummy.inner.value
-        }
+        helper(count: 1)
 
         // Test multiple accesses
-        withDetachedThread {
-            for _ in 0 ..< 10 {
-                let _ = dummy.inner.value
-            }
-        }
-
-        waitForExpectations(timeout: 1, handler: nil)
+        helper(count: 10)
     }
 
     func testExclusivity() {
