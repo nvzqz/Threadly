@@ -29,7 +29,7 @@ import XCTest
 import Foundation
 import Threadly
 
-class DummyData {
+class DeinitFulfiller {
     var expectation: XCTestExpectation
 
     init(expectation: XCTestExpectation) { self.expectation = expectation }
@@ -65,10 +65,19 @@ class ThreadlyTests: XCTestCase {
 
     func testDeallocation() {
         let expct = expectation(description: "deinit")
-        let dummy = ThreadLocal<DummyData> { DummyData(expectation: expct) }
+        let dummy = ThreadLocal(create: { DeinitFulfiller(expectation: expct) })
+        expct.expectedFulfillmentCount = 2
 
+        // Test single access
         withDetachedThread {
             let _ = dummy.inner.value
+        }
+
+        // Test multiple accesses
+        withDetachedThread {
+            for _ in 0 ..< 10 {
+                let _ = dummy.inner.value
+            }
         }
 
         waitForExpectations(timeout: 1, handler: nil)
