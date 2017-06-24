@@ -64,7 +64,8 @@ func withDetachedThread(_ block: @escaping () -> ()) {
 class ThreadlyTests: XCTestCase {
 
     static let allTests = [
-        ("testDeallocation", testDeallocation)
+        ("testDeallocation", testDeallocation),
+        ("testExclusivity", testExclusivity)
     ]
 
     func testDeallocation() {
@@ -73,6 +74,22 @@ class ThreadlyTests: XCTestCase {
 
         withDetachedThread {
             let _ = dummy.inner.value
+        }
+
+        waitForExpectations(timeout: 1, handler: nil)
+    }
+
+    func testExclusivity() {
+        let expect = expectation(description: "inequality")
+        let number = ThreadLocal(value: 42)
+
+        let mainAddress = UnsafeMutablePointer(&number.inner.value)
+
+        withDetachedThread {
+            let otherAddress = UnsafeMutablePointer(&number.inner.value)
+            if mainAddress != otherAddress {
+                expect.fulfill()
+            }
         }
 
         waitForExpectations(timeout: 1, handler: nil)
