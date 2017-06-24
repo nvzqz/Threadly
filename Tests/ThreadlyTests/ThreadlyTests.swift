@@ -30,24 +30,20 @@ import Foundation
 import Threadly
 
 class DummyData {
-
     var expectation: XCTestExpectation
 
     init(expectation: XCTestExpectation) { self.expectation = expectation }
 
     deinit { expectation.fulfill() }
-
 }
 
 #if os(macOS) || os(iOS) || os(watchOS) || os(tvOS)
 class ThreadHandler {
-
     var block: () -> ()
 
     init(block: @escaping () -> ()) { self.block = block }
 
     @objc func perform() { self.block() }
-
 }
 #endif
 
@@ -58,7 +54,6 @@ func withDetachedThread(_ block: @escaping () -> ()) {
     #else
         Thread.detachNewThread(block)
     #endif
-
 }
 
 class ThreadlyTests: XCTestCase {
