@@ -184,3 +184,13 @@ withUnsafePointer(to: &num.inner.value) { ptr in
     print(ptr) // 0x00007fa6f844c920
 }
 ```
+
+## License
+
+All source code for Threadly is released under the [MIT License][mit-license].
+
+Assets for Threadly are released under the [Creative Commons Attribution-ShareAlike 4.0 International License][cc-license]
+and can be found in the [`assets` branch](https://github.com/nvzqz/RandomKit/tree/assets).
+
+[mit-license]: https://github.com/nvzqz/Threadly/blob/master/LICENSE.md
+[cc-license]: https://github.com/nvzqz/Threadly/blob/assets/LICENSE.txt
