@@ -29,26 +29,15 @@ import XCTest
 import Foundation
 import Threadly
 
-class DeinitFulfiller {
-    var expectation: XCTestExpectation
-
-    init(expectation: XCTestExpectation) { self.expectation = expectation }
-
-    deinit { expectation.fulfill() }
-}
-
-#if os(macOS) || os(iOS) || os(watchOS) || os(tvOS)
-class ThreadHandler {
-    var block: () -> ()
-
-    init(block: @escaping () -> ()) { self.block = block }
-
-    @objc func perform() { self.block() }
-}
-#endif
-
 func withDetachedThread(_ block: @escaping () -> ()) {
     #if os(macOS) || os(iOS) || os(watchOS) || os(tvOS)
+        class ThreadHandler {
+            var block: () -> ()
+
+            init(block: @escaping () -> ()) { self.block = block }
+
+            @objc func perform() { block() }
+        }
         let handler = ThreadHandler(block: block)
         Thread.detachNewThreadSelector(#selector(ThreadHandler.perform), toTarget: handler, with: nil)
     #else
@@ -64,6 +53,14 @@ class ThreadlyTests: XCTestCase {
     ]
 
     func testDeallocation() {
+        class DeinitFulfiller {
+            var expectation: XCTestExpectation
+
+            init(expectation: XCTestExpectation) { self.expectation = expectation }
+
+            deinit { expectation.fulfill() }
+        }
+
         func helper(count: Int) {
             let expct = expectation(description: "deinit")
             let dummy = ThreadLocal(create: { DeinitFulfiller(expectation: expct) })
