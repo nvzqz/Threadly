@@ -86,18 +86,18 @@ public final class Box<Value> {
 /// - note: If the initial value isn't known until retrieval, use `DeferredThreadLocal`.
 public struct ThreadLocal<Value>: Hashable {
 
-    fileprivate var _key: _Key<Value>
+    fileprivate var _def: DeferredThreadLocal<Value>
 
     private var _create: () -> Value
 
     /// The hash value.
     public var hashValue: Int {
-        return _key.raw.hashValue
+        return _def.hashValue
     }
 
     /// Returns the inner boxed value for the current thread.
     public var inner: Box<Value> {
-        return _key.box(create: _create)
+        return _def.inner(createdWith: _create)
     }
 
     /// Creates an instance that will use `value` captured in its current
@@ -120,14 +120,14 @@ public struct ThreadLocal<Value>: Hashable {
     /// Creates an instance that will use `create` to generate an initial value.
     public init(create: @escaping () -> Value) {
         _create = create
-        _key = _Key()
+        _def = DeferredThreadLocal()
     }
 
     /// Creates an instance that uses the same storage as `deferred` but with
     /// `create` as an initializer.
     public init(fromDeferred deferred: DeferredThreadLocal<Value>, create: @escaping () -> Value) {
         _create = create
-        _key = deferred._key
+        _def = deferred
     }
 
     /// Returns the result of the closure performed on the value of `self`.
@@ -184,7 +184,7 @@ public struct DeferredThreadLocal<Value>: Hashable {
 
 /// Returns a Boolean value that indicates whether the two arguments have equal values.
 public func ==<T>(lhs: ThreadLocal<T>, rhs: ThreadLocal<T>) -> Bool {
-    return lhs._key.raw == rhs._key.raw
+    return lhs._def == rhs._def
 }
 
 /// Returns a Boolean value that indicates whether the two arguments have equal values.
