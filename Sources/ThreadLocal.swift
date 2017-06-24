@@ -125,7 +125,7 @@ public final class DeferredThreadLocal<Value>: Hashable {
         guard let pointer = pthread_getspecific(_key) else {
             return nil
         }
-        return Unmanaged.fromOpaque(pointer).takeUnretainedValue()
+        return Unmanaged<Box<Value>>.fromOpaque(pointer).takeUnretainedValue()
     }
 
     /// Creates an instance.
