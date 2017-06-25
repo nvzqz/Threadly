@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Threadly  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+
+    <a title="Threadly  Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="index.html">
+          Threadly Docs
+        </a>
+         (100% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/nvzqz/Threadly">
+            <img class="header-icon" src="img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="index.html">Threadly Reference</a>
+      <img class="carat" src="img/carat.png" />
+      Threadly  Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/Box.html">Box</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/DeferredThreadLocal.html">DeferredThreadLocal</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/ThreadLocal.html">ThreadLocal</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions/==(_:_:).html">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions/==(_:_:).html">==(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/ThreadLocalRetrievable.html">ThreadLocalRetrievable</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            
+            <p><a href="https://github.com/nvzqz/Threadly"><img src="https://github.com/nvzqz/Threadly/raw/assets/banner.png" alt="Threadly"></a></p>
+
+<p align="center">
+<img src="https://img.shields.io/badge/platform-ios%20%7C%20macos%20%7C%20watchos%20%7C%20tvos%20%7C%20linux-lightgrey.svg" alt="Platform">
+<img src="https://img.shields.io/badge/language-swift-orange.svg" alt="Language: Swift">
+<a href="https://cocoapods.org/pods/Threadly"><img src="https://img.shields.io/cocoapods/v/Threadly.svg" alt="CocoaPods - Threadly"></a>
+<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage"></a>
+<img src="https://img.shields.io/cocoapods/dt/Threadly.svg" alt="downloads">
+<a href="https://codebeat.co/projects/github-com-nvzqz-threadly-master"><img src="https://codebeat.co/badges/5959731f-3832-4dbd-8c68-755a6071622b" alt="codebeat badge"></a>
+<img src="https://img.shields.io/badge/license-MIT-000000.svg" alt="License">
+</p>
+
+<p>Threadly is a Swift µframework that allows for type-safe thread-local storage.</p>
+<a href='#what-is-a-href-https-en-wikipedia-org-wiki-thread-local_storage-thread-local-storage-a' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='what-is-a-href-https-en-wikipedia-org-wiki-thread-local_storage-thread-local-storage-a'>What is <a href="https://en.wikipedia.org/wiki/Thread-local_storage">Thread-Local Storage</a>?</h2>
+
+<p><em>Thread-local storage</em> (TLS) lets you define a single variable that each thread
+has its own separate copy of. This is great for cases such as having a mutable
+global variable that can&rsquo;t be safely accessed by multiple threads.</p>
+
+<p>One example of this is with random number generators. Each thread can have its
+own seeded generator that&rsquo;s mutated on a per-thread basis. While this may
+potentially use more memory, it&rsquo;s much faster than accessing a shared global
+variable through a mutex.</p>
+<a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installation'>Installation</h2>
+<a href='#compatibility' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='compatibility'>Compatibility</h3>
+
+<ul>
+<li>Platforms:
+
+<ul>
+<li>macOS 10.9+</li>
+<li>iOS 8.0+</li>
+<li>watchOS 2.0+</li>
+<li>tvOS 9.0+</li>
+<li>Linux</li>
+</ul></li>
+<li>Xcode 8.0+</li>
+<li>Swift 3.0+</li>
+</ul>
+<a href='#install-using-swift-package-manager' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='install-using-swift-package-manager'>Install Using Swift Package Manager</h3>
+
+<p>The <a href="https://swift.org/package-manager/">Swift Package Manager</a> is a
+decentralized dependency manager for Swift.</p>
+
+<ol>
+<li><p>Add the project to your <code>Package.swift</code>.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">PackageDescription</span>
+
+<span class="k">let</span> <span class="nv">package</span> <span class="o">=</span> <span class="kt">Package</span><span class="p">(</span>
+    <span class="nv">name</span><span class="p">:</span> <span class="s">"MyAwesomeProject"</span><span class="p">,</span>
+    <span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span>
+        <span class="o">.</span><span class="kt">Package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/nvzqz/Threadly.git"</span><span class="p">,</span>
+                 <span class="nv">majorVersion</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</code></pre></li>
+<li><p>Import the Threadly module.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Threadly</span>
+</code></pre></li>
+</ol>
+<a href='#install-using-cocoapods' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='install-using-cocoapods'>Install Using CocoaPods</h3>
+
+<p><a href="https://cocoapods.org/">CocoaPods</a> is a centralized dependency manager for
+Objective-C and Swift. Go <a href="https://guides.cocoapods.org/using/index.html">here</a>
+to learn more.</p>
+
+<ol>
+<li><p>Add the project to your <a href="https://guides.cocoapods.org/using/the-podfile.html">Podfile</a>.</p>
+<pre class="highlight ruby"><code><span class="n">use_frameworks!</span>
+
+<span class="n">pod</span> <span class="s1">'Threadly'</span><span class="p">,</span> <span class="s1">'~&gt; 1.2.0'</span>
+</code></pre>
+
+<p>If you want to be on the bleeding edge, replace the last line with:</p>
+<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'Threadly'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/nvzqz/Threadly.git'</span>
+</code></pre></li>
+<li><p>Run <code>pod install</code> and open the <code>.xcworkspace</code> file to launch Xcode.</p></li>
+<li><p>Import the Threadly framework.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Threadly</span>
+</code></pre></li>
+</ol>
+<a href='#install-using-carthage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='install-using-carthage'>Install Using Carthage</h3>
+
+<p><a href="https://github.com/Carthage/Carthage">Carthage</a> is a decentralized dependency
+manager for Objective-C and Swift.</p>
+
+<ol>
+<li><p>Add the project to your <a href="https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile">Cartfile</a>.</p>
+<pre class="highlight plaintext"><code>github "nvzqz/Threadly"
+</code></pre></li>
+<li><p>Run <code>carthage update</code> and follow <a href="https://github.com/Carthage/Carthage#getting-started">the additional steps</a>
+in order to add Threadly to your project.</p></li>
+<li><p>Import the Threadly framework.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Threadly</span>
+</code></pre></li>
+</ol>
+<a href='#install-manually' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='install-manually'>Install Manually</h3>
+
+<p>Simply add <code>ThreadLocal.swift</code> and <code>Box.swift</code> into your project.</p>
+<a href='#usage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='usage'>Usage</h2>
+
+<p>Try it out for yourself! Download the repo and open &lsquo;Threadly.playground&rsquo;.</p>
+<a href='#initialization' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='initialization'>Initialization</h3>
+
+<p>There are two ways to initialize a thread-local value. The value can be
+initialized lazily when retrieved (<code>init(value:)</code> &amp; <code>init(create:)</code>) or at the
+call site (<code>init(capturing:)</code>).</p>
+
+<p>Using <code>init(value:)</code> is an <code>@autoclosure</code> shorthand for <code>init(create:)</code>. This
+means that the thread-local value is initialized once per thread.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="k">let</span> <span class="nv">array</span> <span class="o">=</span> <span class="kt">ThreadLocal</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+<span class="kt">Thread</span><span class="o">.</span><span class="n">detachNewThread</span> <span class="p">{</span>
+    <span class="c1">// Allocates an array with 3 elements for this thread</span>
+    <span class="k">let</span> <span class="nv">arr</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">inner</span><span class="o">.</span><span class="n">value</span>
+    <span class="nf">doStuff</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">arr</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// Allocates another array of 3 elements for the main thread</span>
+<span class="nf">doStuff</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">array</span><span class="o">.</span><span class="n">inner</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</code></pre>
+
+<p>When using <code>init(capturing:)</code>, the thread-local value is initialized at the call
+site.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="c1">// The inner value gets allocated</span>
+<span class="k">let</span> <span class="nv">array</span> <span class="o">=</span> <span class="kt">ThreadLocal</span><span class="p">(</span><span class="nv">capturing</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+<span class="kt">Thread</span><span class="o">.</span><span class="n">detachNewThread</span> <span class="p">{</span>
+    <span class="c1">// Retrieves a shallow copy of the initial value that can be used in this</span>
+    <span class="c1">// thread. If the thread-local value gets mutated, a deep copy occurs to</span>
+    <span class="c1">// retain value semantics.</span>
+    <span class="k">let</span> <span class="nv">arr</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">inner</span><span class="o">.</span><span class="n">value</span>
+    <span class="nf">doStuff</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">arr</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// Same as the other thread, but now in the main thread</span>
+<span class="nf">doStuff</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">array</span><span class="o">.</span><span class="n">inner</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</code></pre>
+<a href='#exclusivity' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='exclusivity'>Exclusivity</h3>
+
+<p>Each thread has exclusive access to its own local variable.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="k">let</span> <span class="nv">num</span> <span class="o">=</span> <span class="kt">ThreadLocal</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">42</span><span class="p">)</span>
+
+<span class="kt">Thread</span><span class="o">.</span><span class="n">detachNewThread</span> <span class="p">{</span>
+    <span class="nf">withUnsafePointer</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">num</span><span class="o">.</span><span class="n">inner</span><span class="o">.</span><span class="n">value</span><span class="p">)</span> <span class="p">{</span> <span class="n">ptr</span> <span class="k">in</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">ptr</span><span class="p">)</span> <span class="c1">// 0x00007fa6f86074a0</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nf">withUnsafePointer</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">num</span><span class="o">.</span><span class="n">inner</span><span class="o">.</span><span class="n">value</span><span class="p">)</span> <span class="p">{</span> <span class="n">ptr</span> <span class="k">in</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">ptr</span><span class="p">)</span> <span class="c1">// 0x00007fa6f844c920</span>
+<span class="p">}</span>
+</code></pre>
+
+          </div>
+        </section>
+
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2017 <a class="link" href="https://github.com/nvzqz" target="_blank" rel="external">Nikolai Vazquez</a>. All rights reserved. (Last updated: 2017-06-25)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>
