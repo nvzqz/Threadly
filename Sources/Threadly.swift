@@ -182,6 +182,19 @@ public struct DeferredThreadLocal<Value>: Hashable {
 
 }
 
+/// A type that has a static thread-local instance.
+public protocol ThreadLocalRetrievable {
+    /// The thread-local instance of `Self`.
+    static var threadLocal: ThreadLocal<Self> { get }
+}
+
+extension ThreadLocalRetrievable {
+    /// Returns the result of performing the closure on the thread-local instance of `Self`.
+    public static func withThreadLocal<T>(_ body: (inout Self) throws -> T) rethrows -> T {
+        return try body(&threadLocal.inner.value)
+    }
+}
+
 /// Returns a Boolean value that indicates whether the two arguments have equal values.
 public func ==<T>(lhs: ThreadLocal<T>, rhs: ThreadLocal<T>) -> Bool {
     return lhs._def == rhs._def

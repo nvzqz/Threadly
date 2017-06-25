@@ -76,7 +76,7 @@ to learn more.
     ```ruby
     use_frameworks!
 
-    pod 'Threadly', '~> 1.1.1'
+    pod 'Threadly', '~> 1.2.0'
     ```
 
     If you want to be on the bleeding edge, replace the last line with:
