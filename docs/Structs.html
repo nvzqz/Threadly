@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Classes  Reference</title>
+    <title>Structs  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset="utf-8">
@@ -15,7 +15,7 @@
   <body>
 
 
-    <a title="Classes  Reference"></a>
+    <a title="Structs  Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -43,7 +43,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="index.html">Threadly Reference</a>
       <img class="carat" src="img/carat.png" />
-      Classes  Reference
+      Structs  Reference
     </p>
 
     <div class="content-wrapper">
@@ -93,8 +93,8 @@
 
         <section class="section">
           <div class="section-content">
-            <h1>Classes</h1>
-            <p>The following classes are available globally.</p>
+            <h1>Structs</h1>
+            <p>The following structs are available globally.</p>
 
           </div>
         </section>
@@ -106,9 +106,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Threadly3BoxC"></a>
-                    <a name="//apple_ref/swift/Class/Box" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Threadly3BoxC">Box</a>
+                    <a name="/s:8Threadly11ThreadLocalV"></a>
+                    <a name="//apple_ref/swift/Struct/ThreadLocal" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Threadly11ThreadLocalV">ThreadLocal</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -116,15 +116,59 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A reference to a heap-allocated value.</p>
+                        <p>A type that takes an initializer to create and then store a value that&rsquo;s
+unique to the current thread. The initializer is called the first time
+the thread-local is accessed, either through <code>inner</code> or <code>withValue(_:)</code>.</p>
 
-                        <a href="Classes/Box.html" class="slightly-smaller">See more</a>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    If the initial value isn&rsquo;t known until retrieval, use <code><a href="Structs/DeferredThreadLocal.html">DeferredThreadLocal</a></code>.
+
+</div>
+
+                        <a href="Structs/ThreadLocal.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Box</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ThreadLocal</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">Hashable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Threadly19DeferredThreadLocalV"></a>
+                    <a name="//apple_ref/swift/Struct/DeferredThreadLocal" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Threadly19DeferredThreadLocalV">DeferredThreadLocal</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A type that stores a value unique to the current thread. An initial value
+isn&rsquo;t provided until the inner thread-local value is accessed.</p>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    If the initial value is known at the time of initialization of the
+    enclosing type, consider using <code><a href="Structs/ThreadLocal.html">ThreadLocal</a></code> instead.
+
+</div>
+
+                        <a href="Structs/DeferredThreadLocal.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">DeferredThreadLocal</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">Hashable</span></code></pre>
 
                         </div>
                       </div>

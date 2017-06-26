@@ -55,12 +55,6 @@
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/Box.html">Box</a>
               </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/DeferredThreadLocal.html">DeferredThreadLocal</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/ThreadLocal.html">ThreadLocal</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -82,6 +76,17 @@
               </li>
             </ul>
           </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/DeferredThreadLocal.html">DeferredThreadLocal</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/ThreadLocal.html">ThreadLocal</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -96,82 +101,6 @@
 
         <section class="section">
           <div class="section-content">
-            <div class="task-group">
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:8Threadly11ThreadLocalC"></a>
-                    <a name="//apple_ref/swift/Class/ThreadLocal" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Threadly11ThreadLocalC">ThreadLocal</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A type that takes an initializer to create and then store a value that&rsquo;s
-unique to the current thread. The initializer is called the first time
-the thread-local is accessed, either through <code>inner</code> or <code>withValue(_:)</code>.</p>
-
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    If the initial value isn&rsquo;t known until retrieval, use <code><a href="Classes/DeferredThreadLocal.html">DeferredThreadLocal</a></code>.
-
-</div>
-
-                        <a href="Classes/ThreadLocal.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">ThreadLocal</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">Hashable</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:8Threadly19DeferredThreadLocalC"></a>
-                    <a name="//apple_ref/swift/Class/DeferredThreadLocal" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Threadly19DeferredThreadLocalC">DeferredThreadLocal</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A type that stores a value unique to the current thread. An initial value
-isn&rsquo;t provided until the inner thread-local value is accessed.</p>
-
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    If the initial value is known at the time of initialization of the
-    enclosing type, consider using <code><a href="Classes/ThreadLocal.html">ThreadLocal</a></code> instead.
-
-</div>
-
-                        <a href="Classes/DeferredThreadLocal.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">DeferredThreadLocal</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">Hashable</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
             <div class="task-group">
               <ul class="item-container">
                 <li class="item">
@@ -210,7 +139,7 @@ isn&rsquo;t provided until the inner thread-local value is accessed.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2017 <a class="link" href="https://github.com/nvzqz" target="_blank" rel="external">Nikolai Vazquez</a>. All rights reserved. (Last updated: 2017-06-25)</p>
+      <p>&copy; 2017 <a class="link" href="https://github.com/nvzqz" target="_blank" rel="external">Nikolai Vazquez</a>. All rights reserved. (Last updated: 2017-06-26)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

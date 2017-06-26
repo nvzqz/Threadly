@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ThreadLocal Class Reference</title>
+    <title>ThreadLocal Struct Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Class/ThreadLocal" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Struct/ThreadLocal" class="dashAnchor"></a>
 
-    <a title="ThreadLocal Class Reference"></a>
+    <a title="ThreadLocal Struct Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">Threadly Reference</a>
       <img class="carat" src="../img/carat.png" />
-      ThreadLocal Class Reference
+      ThreadLocal Struct Reference
     </p>
 
     <div class="content-wrapper">
@@ -55,12 +55,6 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/Box.html">Box</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/DeferredThreadLocal.html">DeferredThreadLocal</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/ThreadLocal.html">ThreadLocal</a>
               </li>
             </ul>
           </li>
@@ -83,6 +77,17 @@
               </li>
             </ul>
           </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DeferredThreadLocal.html">DeferredThreadLocal</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ThreadLocal.html">ThreadLocal</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -92,7 +97,7 @@
             <h1>ThreadLocal</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">ThreadLocal</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">Hashable</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ThreadLocal</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">Hashable</span></code></pre>
 
                 </div>
               </div>
@@ -102,7 +107,7 @@ the thread-local is accessed, either through <code>inner</code> or <code>withVal
 
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
-    If the initial value isn&rsquo;t known until retrieval, use <code><a href="../Classes/DeferredThreadLocal.html">DeferredThreadLocal</a></code>.
+    If the initial value isn&rsquo;t known until retrieval, use <code><a href="../Structs/DeferredThreadLocal.html">DeferredThreadLocal</a></code>.
 
 </div>
 
@@ -116,9 +121,9 @@ the thread-local is accessed, either through <code>inner</code> or <code>withVal
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Threadly11ThreadLocalC9hashValueSiv"></a>
+                    <a name="/s:8Threadly11ThreadLocalV9hashValueSiv"></a>
                     <a name="//apple_ref/swift/Property/hashValue" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Threadly11ThreadLocalC9hashValueSiv">hashValue</a>
+                    <a class="token" href="#/s:8Threadly11ThreadLocalV9hashValueSiv">hashValue</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -143,9 +148,9 @@ the thread-local is accessed, either through <code>inner</code> or <code>withVal
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Threadly11ThreadLocalC5innerAA3BoxCyxGv"></a>
+                    <a name="/s:8Threadly11ThreadLocalV5innerAA3BoxCyxGv"></a>
                     <a name="//apple_ref/swift/Property/inner" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Threadly11ThreadLocalC5innerAA3BoxCyxGv">inner</a>
+                    <a class="token" href="#/s:8Threadly11ThreadLocalV5innerAA3BoxCyxGv">inner</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -170,9 +175,9 @@ the thread-local is accessed, either through <code>inner</code> or <code>withVal
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Threadly11ThreadLocalCACyxGx9capturing_tcfc"></a>
+                    <a name="/s:8Threadly11ThreadLocalVACyxGx9capturing_tcfc"></a>
                     <a name="//apple_ref/swift/Method/init(capturing:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Threadly11ThreadLocalCACyxGx9capturing_tcfc">init(capturing:)</a>
+                    <a class="token" href="#/s:8Threadly11ThreadLocalVACyxGx9capturing_tcfc">init(capturing:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -192,7 +197,7 @@ the result of an expensive operation or a copy-on-write type like
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="n">capturing</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Value</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">capturing</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Value</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -202,9 +207,9 @@ the result of an expensive operation or a copy-on-write type like
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Threadly11ThreadLocalCACyxGxyXK5value_tcfc"></a>
+                    <a name="/s:8Threadly11ThreadLocalVACyxGxyXK5value_tcfc"></a>
                     <a name="//apple_ref/swift/Method/init(value:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Threadly11ThreadLocalCACyxGxyXK5value_tcfc">init(value:)</a>
+                    <a class="token" href="#/s:8Threadly11ThreadLocalVACyxGxyXK5value_tcfc">init(value:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -219,7 +224,7 @@ the result of an expensive operation or a copy-on-write type like
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kd">@autoclosure</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Value</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kd">@autoclosure</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Value</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -229,9 +234,9 @@ the result of an expensive operation or a copy-on-write type like
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Threadly11ThreadLocalCACyxGxyc6create_tcfc"></a>
+                    <a name="/s:8Threadly11ThreadLocalVACyxGxyc6create_tcfc"></a>
                     <a name="//apple_ref/swift/Method/init(create:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Threadly11ThreadLocalCACyxGxyc6create_tcfc">init(create:)</a>
+                    <a class="token" href="#/s:8Threadly11ThreadLocalVACyxGxyc6create_tcfc">init(create:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -256,9 +261,37 @@ the result of an expensive operation or a copy-on-write type like
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Threadly11ThreadLocalC9withValueqd__qd__xzKcKlF"></a>
+                    <a name="/s:8Threadly11ThreadLocalVACyxGAA08DeferredbC0VyxG04fromD0_xyc6createtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(fromDeferred:create:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Threadly11ThreadLocalVACyxGAA08DeferredbC0VyxG04fromD0_xyc6createtcfc">init(fromDeferred:create:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates an instance that uses the same storage as <code>deferred</code> but with
+<code>create</code> as an initializer.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">fromDeferred</span> <span class="nv">deferred</span><span class="p">:</span> <span class="kt"><a href="../Structs/DeferredThreadLocal.html">DeferredThreadLocal</a></span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">create</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Value</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Threadly11ThreadLocalV9withValueqd__qd__xzKcKlF"></a>
                     <a name="//apple_ref/swift/Method/withValue(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Threadly11ThreadLocalC9withValueqd__qd__xzKcKlF">withValue(_:)</a>
+                    <a class="token" href="#/s:8Threadly11ThreadLocalV9withValueqd__qd__xzKcKlF">withValue(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -288,7 +321,7 @@ the result of an expensive operation or a copy-on-write type like
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2017 <a class="link" href="https://github.com/nvzqz" target="_blank" rel="external">Nikolai Vazquez</a>. All rights reserved. (Last updated: 2017-06-25)</p>
+      <p>&copy; 2017 <a class="link" href="https://github.com/nvzqz" target="_blank" rel="external">Nikolai Vazquez</a>. All rights reserved. (Last updated: 2017-06-26)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
