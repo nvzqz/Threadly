@@ -184,8 +184,13 @@ public struct DeferredThreadLocal<Value>: Hashable {
 
 /// A type that has a static thread-local instance.
 public protocol ThreadLocalRetrievable {
+
     /// The thread-local boxed instance of `Self`.
     static var threadLocal: Box<Self> { get }
+
+    /// Returns the result of performing the closure on the thread-local instance of `Self`.
+    static func withThreadLocal<T>(_ body: (inout Self) throws -> T) rethrows -> T
+
 }
 
 extension ThreadLocalRetrievable {
