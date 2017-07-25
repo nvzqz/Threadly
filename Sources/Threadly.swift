@@ -201,11 +201,11 @@ extension ThreadLocalRetrievable {
 }
 
 /// Returns a Boolean value that indicates whether the two arguments have equal values.
-public func ==<T>(lhs: ThreadLocal<T>, rhs: ThreadLocal<T>) -> Bool {
+public func ==<T, U>(lhs: ThreadLocal<T>, rhs: ThreadLocal<U>) -> Bool {
     return lhs._def == rhs._def
 }
 
 /// Returns a Boolean value that indicates whether the two arguments have equal values.
-public func ==<T>(lhs: DeferredThreadLocal<T>, rhs: DeferredThreadLocal<T>) -> Bool {
+public func ==<T, U>(lhs: DeferredThreadLocal<T>, rhs: DeferredThreadLocal<U>) -> Bool {
     return lhs._key.raw == rhs._key.raw
 }
