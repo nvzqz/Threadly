@@ -11,14 +11,31 @@ matrix:
       sudo: required
       dist: trusty
       env:
-        - SWIFT_VERSION=swift-3.1.1
+        - SWIFT_VERSION="3.0.2"
+    - os: linux
+      language: generic
+      sudo: required
+      dist: trusty
+      env:
+        - SWIFT_VERSION="3.1"
+    - os: linux
+      language: generic
+      sudo: required
+      dist: trusty
+      env:
+        - SWIFT_VERSION="3.1.1"
+    - os: linux
+      language: generic
+      sudo: required
+      dist: trusty
+      env:
+        - SWIFT_VERSION="4.0-DEVELOPMENT-SNAPSHOT-2017-07-24-a"
 env:
   global:
     - LC_CTYPE=en_US.UTF-8
     - LANG=en_US.UTF-8
     - FRAMEWORK_NAME="Threadly"
-    - SWIFTENV_INSTALL="https://gist.githubusercontent.com/kylef/5c0475ff02b7c7671d2a/raw/9f442512a46d7a2af7b850d65a7e9bd31edfb09b/swiftenv-install.sh"
-before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then gem install xcpretty -N; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then eval "$(curl -sL $SWIFTENV_INSTALL)"; fi
+    - SWIFTENV_ROOT="$HOME/.swiftenv"
+    - PATH="$SWIFTENV_ROOT/bin:$SWIFTENV_ROOT/shims:$PATH"
+install: ./ci/install.sh
 script: ./ci/travis.sh
