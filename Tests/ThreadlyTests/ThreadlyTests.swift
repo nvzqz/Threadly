@@ -61,12 +61,12 @@ class ThreadlyTests: XCTestCase {
             deinit { expectation.fulfill() }
         }
 
-        func helper(count: Int) {
+        func helper(count: UInt) {
             let expct = expectation(description: "deinit")
             let dummy = ThreadLocal(create: { DeinitFulfiller(expectation: expct) })
 
             withDetachedThread {
-                for _ in repeatElement((), count: count) {
+                for _ in 0 ..< count {
                     let _ = dummy.inner.value
                 }
             }
