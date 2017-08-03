@@ -3,9 +3,18 @@ matrix:
     - os: osx
       osx_image: xcode8.1
       language: objective-c
+      env:
+        - QUICK_POD_LINT=true
+    - os: osx
+      osx_image: xcode8.3
+      language: objective-c
+      env:
+        - QUICK_POD_LINT=false
     - os: osx
       osx_image: xcode9
       language: objective-c
+      env:
+        - QUICK_POD_LINT=true
     - os: linux
       language: generic
       sudo: required
@@ -29,7 +38,7 @@ matrix:
       sudo: required
       dist: trusty
       env:
-        - SWIFT_VERSION="4.0-DEVELOPMENT-SNAPSHOT-2017-07-24-a"
+        - SWIFT_VERSION="4.0-DEVELOPMENT-SNAPSHOT-2017-07-26-a"
 env:
   global:
     - LC_CTYPE=en_US.UTF-8

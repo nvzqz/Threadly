@@ -7,28 +7,37 @@ if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
     swift test
 elif [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
     xcodebuild -version
+    xcodebuild -showsdks
 
-    xcodebuild \
-        -project $FRAMEWORK_NAME.xcodeproj \
-        -scheme "$FRAMEWORK_NAME macOS" \
-        ONLY_ACTIVE_ARCH=YES \
-        test | xcpretty
+    function build() {
+        if $3; then
+            XC_CMD="test"
+        else
+            XC_CMD="build"
+        fi
+        for cfg in Debug Release; do
+            xcodebuild \
+                -project $FRAMEWORK_NAME.xcodeproj \
+                -scheme "$FRAMEWORK_NAME $1" \
+                -destination "$2" \
+                -configuration "$cfg" \
+                ONLY_ACTIVE_ARCH=NO \
+                $XC_CMD | xcpretty
+        done
+    }
 
-    xcodebuild \
-        -project $FRAMEWORK_NAME.xcodeproj \
-        -scheme "$FRAMEWORK_NAME iOS" \
-        -sdk iphonesimulator \
-        -destination "platform=iOS Simulator,name=iPhone 6,OS=10.1" \
-        ONLY_ACTIVE_ARCH=NO \
-        test | xcpretty
+    # ----- OS: --- Destination: ---------------------- Tests:
+    build   macOS   "arch=x86_64"                       true
+    build   iOS     "OS=8.1,name=iPhone 4S"             true
+    build   tvOS    "OS=9.0,name=Apple TV 1080p"        true
+    build   watchOS "OS=2.0,name=Apple Watch - 42mm"    false
 
-    xcodebuild \
-        -project $FRAMEWORK_NAME.xcodeproj \
-        -scheme "$FRAMEWORK_NAME tvOS" \
-        -sdk appletvsimulator \
-        -destination "platform=tvOS Simulator,name=Apple TV 1080p" \
-        ONLY_ACTIVE_ARCH=NO \
-        test | xcpretty
+    if $QUICK_POD_LINT; then
+        QUICK_ARG="--quick"
+    else
+        pod repo list
+        pod repo update
+    fi
 
-    pod lib lint --quick
+    pod lib lint --allow-warnings $QUICK_ARG
 fi
