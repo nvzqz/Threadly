@@ -1,14 +1,22 @@
 [![Threadly](https://github.com/nvzqz/Threadly/raw/assets/banner.png)](https://github.com/nvzqz/Threadly)
 
-<p align="center">
-<img src="https://img.shields.io/badge/platform-ios%20%7C%20macos%20%7C%20watchos%20%7C%20tvos%20%7C%20linux-lightgrey.svg" alt="Platform">
-<img src="https://img.shields.io/badge/language-swift-orange.svg" alt="Language: Swift">
-<a href="https://cocoapods.org/pods/Threadly"><img src="https://img.shields.io/cocoapods/v/Threadly.svg" alt="CocoaPods - Threadly"></a>
-<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage"></a>
-<img src="https://img.shields.io/cocoapods/dt/Threadly.svg" alt="downloads">
-<a href="https://codebeat.co/projects/github-com-nvzqz-threadly-master"><img src="https://codebeat.co/badges/5959731f-3832-4dbd-8c68-755a6071622b" alt="codebeat badge"></a>
-<img src="https://img.shields.io/badge/license-MIT-000000.svg" alt="License">
-</p>
+<div align="center">
+    <img src="https://img.shields.io/badge/platform-ios%20%7C%20macos%20%7C%20watchos%20%7C%20tvos%20%7C%20linux-lightgrey.svg" alt="Platform">
+    <img src="https://img.shields.io/badge/language-swift-orange.svg" alt="Language: Swift">
+    <img src="https://img.shields.io/cocoapods/dt/Threadly.svg" alt="downloads">
+    <br>
+    <a href="https://cocoapods.org/pods/Threadly"><img src="https://img.shields.io/cocoapods/v/Threadly.svg" alt="CocoaPods - Threadly"></a>
+    <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage"></a>
+    <a href="https://codebeat.co/projects/github-com-nvzqz-threadly-master"><img src="https://codebeat.co/badges/5959731f-3832-4dbd-8c68-755a6071622b" alt="codebeat badge"></a>
+    <img src="https://img.shields.io/badge/license-MIT-000000.svg" alt="License">
+    <br>
+    <a href="https://www.patreon.com/nvzqz">
+        <img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron!" height="35">
+    </a>
+    <a href="https://www.paypal.me/nvzqz">
+        <img src="https://buymecoffee.intm.org/img/button-paypal-white.png" alt="Buy me a coffee" height="35">
+    </a>
+</div>
 
 Threadly is a Swift µframework that allows for type-safe thread-local storage.
 
